@@ -32,3 +32,14 @@ WHERE orders.customer_id = customer.customer_id
 AND orders.salesman_id = salesman.salesman_id
 AND customer.grade IS NOT NULL
 AND salesman.city IS NOT NULL
+
+Question 6:
+
+SELECT customer.cust_name AS "Customer",
+customer.city AS "City",
+salesman.name AS "Salesman",
+salesman.commission
+FROM customer,salesman 
+WHERE salesman.commission >= 0.12
+AND salesman.commission <= 0.14
+AND customer.salesman_id = salesman.salesman_id
