@@ -1,0 +1,34 @@
+Question 1:
+
+SELECT customer.cust_name, salesman.name, salesman.city
+FROM customer, salesman
+WHERE customer.city = salesman.city
+
+Question 2:
+
+SELECT customer.cust_name, salesman.name
+FROM customer,salesman
+WHERE customer.salesman_id= salesman.salesman_id 
+
+Question 3:
+
+SELECT orders.ord_no, customer.cust_name, customer.customer_id, salesman.salesman_id
+FROM customer, salesman, orders
+WHERE customer.city != salesman.city
+AND orders.customer_id = customer.customer_id
+AND orders.salesman_id = salesman.salesman_id
+
+Question 4:
+
+SELECT orders.ord_no, customer.cust_name
+FROM customer, orders
+WHERE customer.customer_id = orders.customer_id
+
+Question 5:
+
+SELECT customer.cust_name AS "Customer", customer.grade AS "Grade", orders.ord_no AS "Order No."
+FROM customer, orders, salesman 
+WHERE orders.customer_id = customer.customer_id
+AND orders.salesman_id = salesman.salesman_id
+AND customer.grade IS NOT NULL
+AND salesman.city IS NOT NULL
